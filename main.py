@@ -17,7 +17,10 @@ import numpy
 
 #	Funciones
 def ga_init(size):
-   return numpy.random.randint(10, size = (size,size))
+   matrix = numpy.random.randint(10, size = (size,size))
+   for x in xrange(0,size):
+      matrix[x][x] = 0
+   return matrix
 
 def ga_table(matriz,size):
    table = []
@@ -31,7 +34,7 @@ def ga_table(matriz,size):
 
 def ga_init_mutation(size):
    reference = numpy.zeros(size, dtype=numpy.int)
-   max_ones = random.randint(1,size-1)
+   max_ones = random.randint(1,size)
    for x in xrange(0,max_ones):
       reference[random.randint(0,max_ones)] = 1
    return reference
@@ -64,8 +67,8 @@ def ga_min(array):
 
 #	Main
 def main():
-   size = 8
-   population = 100 #  1 + x
+   size = 4
+   population = 5 #  1 + x
    matrix = ga_init(size)
    print "La Matriz es:"
    pprint(matrix)
