@@ -17,11 +17,9 @@ import numpy
 
 #	Funciones
 def ga_init(size):
-   "Creamos una matriz aleatoria de tamaño size"
    return numpy.random.randint(10, size = (size,size))
 
 def ga_table(matriz,size):
-   "Generamos la tabla de valores, leemos la matriz y almacenamos los valores i,j distintos de 0. A cada uno le asignamos un identificador y su valor correspondiente"
    table = []
    count = 1
    for x in xrange(0,size):
